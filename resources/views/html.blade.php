@@ -7,16 +7,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Tranvas</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{mix('css/app.css')}}">
     @yield('header-styles')
 </head>
 <body>
-<div class="container">
-    <div class="container" id="app">
+@include('partials.menu')
+
+<div class="container" id="app">
+
+    <div class="content-container">
         @yield('content')
     </div>
 
 </div>
+
+<script src="{{ mix('js/app.js') }}"></script>
 
 @yield('footer-script')
 </body>
